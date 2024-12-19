@@ -1,0 +1,37 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.gisonwin.plugin.ideaPluginDemo</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>IdeaPluginDemo</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="gisonwin@qq.com" url="https://www.gisonwin.com">GiSon.Win</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+<!--    <description><![CDATA[aaabbcc]]></description>-->
+    <!-- 最低可安装的idea版本-->
+<!--    <idea-version since-build="173.0"/>-->
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+<!-- 插件需要的依赖信息写在此处-->
+    </extensions>
+    <actions>
+        <!-- 方法和行为写在此处-->
+        <action id="rightMenuPopTextId" class="com.gisonwin.plugin.ideaplugindemo.rightMenuPopText" text="获取右键选中文本" description="这是一个获取右键选中文本的菜单实例">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="myActionOne" class="com.gisonwin.plugin.ideaplugindemo.QuickKeyPop" text="press ctrl 1" description="按下Ctrl +1 弹出信息">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl 1"/>
+        </action>
+    </actions>
+</idea-plugin>
